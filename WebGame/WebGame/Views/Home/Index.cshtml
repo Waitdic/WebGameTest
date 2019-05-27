@@ -1,0 +1,44 @@
+﻿@model IEnumerable<WebGame.Models.Answer>
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Угадай слово</title>
+</head>
+<body>
+    <!--User answer-->
+    <h2>Попробуй угадать</h2>
+    <form method="post">
+        <table>
+            <tr>
+                <td>Введите свой вариант</td>
+                <td><input type="text" name="UserAnswer" /></td>
+                <td><input type="submit" value="Отправить" /></td>
+            </tr>
+        </table>
+    </form>
+
+    <!--All answer-->
+    <table>
+        @foreach (var answer in Model)
+        {
+
+            <tr>
+                <td>Вы</td>
+                <td>:</td>
+                <td>@answer.UserAnswer</td>
+            </tr>
+            <tr>
+                <td>Система</td>
+                <td>:</td>
+                <td>@answer.SystemAnswer</td>
+            </tr>
+
+        }
+    </table>
+
+</body>
+</html>
+
